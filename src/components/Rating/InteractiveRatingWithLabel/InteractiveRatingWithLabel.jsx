@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 
 import * as Rating from "../components";
-import { RatingContext } from "../Context";
-import { Label, Labels, Wrapper } from "./InteractiveRatingWithLabel.style";
+import { Wrapper } from "./InteractiveRatingWithLabel.style";
 
 function InteractiveRatingWithLabel({ value, labels, onChange }) {
   return (
-    <Rating.Root rating={value} max={labels.length}>
+    <Rating.Root rating={value} labels={labels}>
       <Wrapper>
         <Rating.Container>
           {({ rating, isHighlighted }) => (
@@ -16,22 +15,11 @@ function InteractiveRatingWithLabel({ value, labels, onChange }) {
           )}
         </Rating.Container>
 
-        <RatingContext.Consumer>
-          {({ ratings, hovered, selected }) => (
-            <Labels>
-              {ratings.map((value, index) => (
-                <Label
-                  key={value}
-                  data-visible={
-                    hovered === value || (hovered === 0 && selected === value)
-                  }
-                >
-                  {labels.at(index)}
-                </Label>
-              ))}
-            </Labels>
+        <Rating.Labels>
+          {({ label, isVisible }) => (
+            <Rating.Label isVisible={isVisible}>{label}</Rating.Label>
           )}
-        </RatingContext.Consumer>
+        </Rating.Labels>
       </Wrapper>
     </Rating.Root>
   );

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { RatingContext } from "../../Context";
 import { getRatingsArray } from "./utils";
 
-function Root({ rating, max, children }) {
+function Root({ rating, max, labels, children }) {
   const [hovered, setHovered] = useState(0);
   const [selected, setSelected] = useState(Math.min(max, rating));
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -39,7 +39,8 @@ function Root({ rating, max, children }) {
   return (
     <RatingContext.Provider
       value={{
-        ratings: getRatingsArray(max),
+        ratings: getRatingsArray(max, labels),
+        labels,
         hovered,
         selected,
         shouldAnimate,
@@ -56,7 +57,12 @@ function Root({ rating, max, children }) {
 Root.propTypes = {
   rating: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
+  labels: PropTypes.arrayOf(PropTypes.string),
   children: PropTypes.node.isRequired,
+};
+
+Root.defaultProps = {
+  labels: undefined,
 };
 
 export default Root;
