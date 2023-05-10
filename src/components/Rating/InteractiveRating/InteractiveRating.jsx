@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import * as Rating from "../components";
 import { StyledButton } from "./InteractiveRating.style";
 
-function InteractiveRating({ value, max }) {
+function InteractiveRating({ value, max, onChange }) {
   const [hovered, setHovered] = useState(0);
   const [selected, setSelected] = useState(value);
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -20,6 +20,7 @@ function InteractiveRating({ value, max }) {
   const updateSelected = (value) => {
     setSelected(value);
     setShouldAnimate(true);
+    onChange(value);
   };
 
   const shouldHighlight = (rating) => {
@@ -64,11 +65,13 @@ function InteractiveRating({ value, max }) {
 InteractiveRating.propTypes = {
   value: PropTypes.number,
   max: PropTypes.number,
+  onChange: PropTypes.func,
 };
 
 InteractiveRating.defaultProps = {
   value: 0,
   max: 5,
+  onChange: () => {},
 };
 
 export default InteractiveRating;

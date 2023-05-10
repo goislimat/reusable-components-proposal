@@ -16,7 +16,9 @@ function App() {
   return (
     <Wrapper>
       <StaticRating value={4} />
-      <InteractiveRating />
+      <InteractiveRating
+        onChange={(rating) => console.log(`the new rating is ${rating}`)}
+      />
     </Wrapper>
   );
 }
