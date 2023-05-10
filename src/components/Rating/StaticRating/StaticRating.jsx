@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import * as Rating from "./components";
+import * as Rating from "../components";
 
 function StaticRating({ value, max }) {
   return (

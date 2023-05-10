@@ -1,3 +1,4 @@
+import InteractiveRating from "./InteractiveRating";
 import StaticRating from "./StaticRating";
 
-export default StaticRating;
+export { InteractiveRating, StaticRating };

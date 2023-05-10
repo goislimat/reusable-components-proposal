@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Rating from "./components/Rating";
+import { InteractiveRating, StaticRating } from "./components/Rating";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -8,12 +8,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 32px;
 `;
 
 function App() {
   return (
     <Wrapper>
-      <Rating value={4} />
+      <StaticRating value={4} />
+      <InteractiveRating />
     </Wrapper>
   );
 }
