@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { StarIcon } from "../../../Icon";
 import { StyledIcon } from "./Icon.style";
 
-function Icon({ isHighlighted, children }) {
+function Icon({ isHighlighted, children, ...rest }) {
   return (
-    <StyledIcon data-highlight={isHighlighted}>
+    <StyledIcon data-highlight={isHighlighted} {...rest}>
       {children || <StarIcon />}
     </StyledIcon>
   );
