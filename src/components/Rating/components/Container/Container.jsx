@@ -3,14 +3,15 @@ import { Fragment } from "react";
 
 import { useRating } from "../../Context";
 import { StyledContainer } from "./Container.style";
+import { shouldHighlight } from "./utils";
 
 function Container({ children, ...rest }) {
-  const { rating, ratings } = useRating();
+  const { ratings, hovered, selected, resetHovered } = useRating();
 
   return (
-    <StyledContainer {...rest}>
+    <StyledContainer onMouseLeave={resetHovered} {...rest}>
       {ratings.map((value) => {
-        const isHighlighted = value <= rating;
+        const isHighlighted = shouldHighlight(value, hovered, selected);
 
         return (
           <Fragment key={value}>
