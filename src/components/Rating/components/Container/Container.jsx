@@ -12,11 +12,7 @@ function Container({ children, ...rest }) {
       {ratings.map((value) => {
         const isHighlighted = value <= rating;
 
-        return (
-          <Fragment key={value}>
-            {children({ rating: value, isHighlighted })}
-          </Fragment>
-        );
+        return <Fragment key={value}>{children({ isHighlighted })}</Fragment>;
       })}
     </StyledContainer>
   );
