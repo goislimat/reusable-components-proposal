@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div``;
-
-const StarsContainer = styled.div`
-  display: flex;
-  gap: 24px;
-`;
-
-const IconContainer = styled.span`
+const StyledIcon = styled.span`
   path {
     stroke: #d5d5d9;
     stroke-width: 10%;
@@ -24,4 +17,4 @@ const IconContainer = styled.span`
   }
 `;
 
-export { Wrapper, StarsContainer, IconContainer };
+export { StyledIcon };

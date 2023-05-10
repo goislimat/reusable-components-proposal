@@ -1,3 +1,3 @@
-import Rating from "./Rating";
+import StaticRating from "./StaticRating";
 
-export default Rating;
+export default StaticRating;
