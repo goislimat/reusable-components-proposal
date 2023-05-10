@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { InteractiveRating, StaticRating } from "./components/Rating";
+import {
+  InteractiveRating,
+  InteractiveRatingWithLabel,
+  StaticRating,
+} from "./components/Rating";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -17,6 +21,9 @@ function App() {
     <Wrapper>
       <StaticRating value={4} />
       <InteractiveRating
+        onChange={(rating) => console.log(`the new rating is ${rating}`)}
+      />
+      <InteractiveRatingWithLabel
         onChange={(rating) => console.log(`the new rating is ${rating}`)}
       />
     </Wrapper>
