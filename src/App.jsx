@@ -21,10 +21,13 @@ function App() {
   return (
     <Wrapper>
       <StaticRating value={4} />
+      <StaticRating value={3} size="sm" color="#006263" />
       <StaticRating value={3}>
         <ReferenceIcon />
       </StaticRating>
-      <StaticRating value={3} size="sm" color="#006263" />
+      <StaticRating value={3} size="sm" color="#006263">
+        <ReferenceIcon />
+      </StaticRating>
       <InteractiveRating
         onChange={(rating) => console.log(`the new rating is ${rating}`)}
       />
