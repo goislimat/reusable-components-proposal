@@ -12,8 +12,13 @@ const StyledIcon = styled.span`
   &[data-highlight="true"] {
     path {
       stroke-width: 0;
-      fill: #ffc000;
+      fill: ${({ color }) => color || "#ffc000"};
     }
+  }
+
+  &[data-size="sm"] svg {
+    width: 18px;
+    height: 16px;
   }
 `;
 

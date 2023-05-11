@@ -2,11 +2,17 @@ import PropTypes from "prop-types";
 
 import * as Rating from "../components";
 
-function StaticRating({ value, max }) {
+function StaticRating({ value, max, size, color }) {
   return (
     <Rating.Root rating={value} max={max}>
-      <Rating.Container>
-        {({ isHighlighted }) => <Rating.Icon isHighlighted={isHighlighted} />}
+      <Rating.Container data-size={size}>
+        {({ isHighlighted }) => (
+          <Rating.Icon
+            isHighlighted={isHighlighted}
+            data-size={size}
+            color={color}
+          />
+        )}
       </Rating.Container>
     </Rating.Root>
   );
@@ -15,10 +21,14 @@ function StaticRating({ value, max }) {
 StaticRating.propTypes = {
   value: PropTypes.number.isRequired,
   max: PropTypes.number,
+  size: PropTypes.string,
+  color: PropTypes.string,
 };
 
 StaticRating.defaultProps = {
   max: 5,
+  size: "md",
+  color: "#ffc000",
 };
 
 export default StaticRating;
