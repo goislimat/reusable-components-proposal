@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DogIcon } from "./components/Icon";
 import {
   InteractiveRating,
   InteractiveRatingWithLabel,
@@ -20,6 +21,9 @@ function App() {
   return (
     <Wrapper>
       <StaticRating value={4} />
+      <StaticRating value={3}>
+        <DogIcon />
+      </StaticRating>
       <StaticRating value={3} size="sm" color="#006263" />
       <InteractiveRating
         onChange={(rating) => console.log(`the new rating is ${rating}`)}

@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const StyledIcon = styled.span`
+  & svg {
+    width: 36px;
+    height: 34px;
+  }
+
   path {
     stroke: #d5d5d9;
     stroke-width: 10%;
