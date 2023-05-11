@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DogIcon } from "./components/Icon";
+import { ReferenceIcon } from "./components/Icon";
 import {
   InteractiveRating,
   InteractiveRatingWithLabel,
@@ -22,7 +22,7 @@ function App() {
     <Wrapper>
       <StaticRating value={4} />
       <StaticRating value={3}>
-        <DogIcon />
+        <ReferenceIcon />
       </StaticRating>
       <StaticRating value={3} size="sm" color="#006263" />
       <InteractiveRating
